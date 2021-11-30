@@ -68,7 +68,18 @@ button {
   color: #4287f5;
 }
 
-#newquote-button:hover {
+#left-buttons {
+  display: flex;
+  align-items: center;
+  width: 20%;
+}
+
+#wiki-search-button {
+  margin-left: 0.4em;
+}
+
+#newquote-button:hover,
+#wiki-search-button:hover {
   color: #aab3aa;
 }
 
