@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg width='64' height='64' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 16c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm0-2c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zm33.414-6l5.95-5.95L45.95.636 40 6.586 34.05.636 32.636 2.05 38.586 8l-5.95 5.95 1.414 1.414L40 9.414l5.95 5.95 1.414-1.414L41.414 8zM40 48c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm0-2c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zM9.414 40l5.95-5.95-1.414-1.414L8 38.586l-5.95-5.95L.636 34.05 6.586 40l-5.95 5.95 1.414 1.414L8 41.414l5.95 5.95 1.414-1.414L9.414 40z' fill='%23000000' fill-opacity='0.19' fill-rule='evenodd'/%3E%3C/svg%3E");
+  color: black;
+  font-family: "Roboto Slab", serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#container {
+  min-width: 60%;
+  margin: 1em;
+  padding: 1em 2em;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: black;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0px 5px 10px 6px rgba(0, 0, 0, 0.3);
+}
+
+#quote-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 1em;
+}
+
+#quote {
+  font-weight: 600;
+  font-size: 2.25rem;
+  margin-bottom: 0.2em;
+}
+
+#author {
+  font-weight: 200;
+  font-size: 1.75rem;
+}
+
+#button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+#quote-icon {
+  font-size: 2.75rem;
+}
+
+button {
+  padding: 0.25em 1.25em;
+  background: black;
+  border-radius: 5px;
+  font-size: 1.25rem;
+  color: white;
+  border: none;
+  box-shadow: 0 4px 0px grey;
+}
+
+#twitter-button:hover {
+  color: #4287f5;
+}
+
+#newquote-button:hover {
+  color: #aab3aa;
+}
+
+button:active {
+  box-shadow: none;
+  transform: translate(0, 4px);
+}
+
+@media screen and (max-width: 800px) {
+  #quote {
+    font-size: 1.75rem;
+  }
+  #author {
+    font-size: 1.45rem;
+  }
+
+  #quote-icon {
+    font-size: 2rem;
+  }
+}
