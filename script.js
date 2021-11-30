@@ -28,7 +28,7 @@ function newQuoteAPI() {
     let randomQuote = quotes[getRandomInt(0, quotes.length - 1)];
     quote.innerText = randomQuote["text"];
     if (randomQuote["author"] === null) {
-      author.innerText = "Anon";
+      author.innerText = "Unknown";
     } else {
       author.innerText = randomQuote["author"];
     }
@@ -39,7 +39,7 @@ function newQuoteLocal() {
   let randomQuote = localQuotes[getRandomInt(0, localQuotes.length - 1)];
   quote.innerText = randomQuote["text"];
   if (randomQuote["author"] === null) {
-    author.innerText = "Anon";
+    author.innerText = "Unknown";
   } else {
     author.innerText = randomQuote["author"];
   }

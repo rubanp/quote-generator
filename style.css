@@ -18,7 +18,7 @@ body {
   margin: 1em;
   padding: 1em 2em;
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.6);
   box-shadow: black;
   min-height: 150px;
   display: flex;
@@ -56,8 +56,8 @@ body {
 
 button {
   padding: 0.25em 1.25em;
-  background: black;
-  border-radius: 5px;
+  background: #383838;
+  border-radius: 10px;
   font-size: 1.25rem;
   color: white;
   border: none;
