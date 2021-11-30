@@ -1,7 +1,8 @@
-import { localQuotes } from "./quotes.js";
-
-let quote = document.getElementById("quote-text");
-let author = document.getElementById("author-text");
+const quote = document.getElementById("quote-text");
+const author = document.getElementById("author-text");
+const loader = document.getElementById("loader");
+const container = document.getElementById("container");
+let quotes = [];
 
 // Helper Functions
 function getRandomInt(min, max) {
@@ -10,12 +11,24 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+// Loader
+function loading() {
+  loader.style.display = "block";
+  container.style.display = "none";
+}
+
+function completed() {
+  loader.style.display = "none";
+  container.style.display = "block";
+}
+
 // Get Quotes From API
 async function getQuotes() {
+  loading();
   const apiURL = "https://type.fit/api/quotes";
   try {
     const response = await fetch(apiURL);
-    const quotes = await response.json();
+    quotes = await response.json();
     return quotes;
   } catch (error) {
     console.log(error);
@@ -23,7 +36,8 @@ async function getQuotes() {
 }
 
 // Update Page With New Quote From API
-function newQuoteAPI() {
+function newQuote() {
+  loading();
   getQuotes().then((quotes) => {
     let randomQuote = quotes[getRandomInt(0, quotes.length - 1)];
     quote.innerText = randomQuote["text"];
@@ -32,23 +46,14 @@ function newQuoteAPI() {
     } else {
       author.innerText = randomQuote["author"];
     }
+    completed();
   });
-}
-
-function newQuoteLocal() {
-  let randomQuote = localQuotes[getRandomInt(0, localQuotes.length - 1)];
-  quote.innerText = randomQuote["text"];
-  if (randomQuote["author"] === null) {
-    author.innerText = "Unknown";
-  } else {
-    author.innerText = randomQuote["author"];
-  }
 }
 
 // Generate New Quote on Clicking 'New Quote' Button
 document
   .querySelectorAll("#newquote-button")[0]
-  .addEventListener("click", newQuoteAPI);
+  .addEventListener("click", newQuote);
 
 // Share Quote To Twitter
 function tweetQuote() {
