@@ -27,21 +27,22 @@ async function getQuotes() {
 function newQuoteAPI() {
   getQuotes().then((quotes) => {
     let randomQuote = quotes[getRandomInt(0, quotes.length - 1)];
-    element("#quote").innerText = randomQuote["text"];
-    element("#author").innerText = randomQuote["author"];
-    if (!element("#author")) {
-      element("#author").innerText = "Anon";
+    element("#quote-text").innerText = randomQuote["text"];
+    if (randomQuote["author"] === null) {
+      element("#author-text").innerText = "Anon";
+    } else {
+      element("#author-text").innerText = randomQuote["author"];
     }
   });
 }
 
 function newQuoteLocal() {
   let randomQuote = localQuotes[getRandomInt(0, localQuotes.length - 1)];
-  element("#quote").innerText = randomQuote["text"];
+  element("#quote-text").innerText = randomQuote["text"];
   if (randomQuote["author"] === null) {
-    element("#author").innerText = "Anon";
+    element("#author-text").innerText = "Anon";
   } else {
-    element("#author").innerText = randomQuote["author"];
+    element("#author-text").innerText = randomQuote["author"];
   }
 }
 

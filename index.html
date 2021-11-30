@@ -18,11 +18,13 @@
       <div id="quote-container">
         <!-- Quote -->
         <p id="quote">
-          <i id="quote-icon" class="fas fa-quote-left"></i> Life itself is a
-          quotation
+          <i id="quote-icon" class="fas fa-quote-left"></i>
+          <span id="quote-text">Life itself is a quotation </span>
         </p>
         <!-- Author -->
-        <p id="author"><em>Jorge Luis Borges</em></p>
+        <p id="author">
+          <em><span id="author-text">Jorge Luis Borges</span></em>
+        </p>
       </div>
       <!-- Buttons -->
       <div id="button-container">
@@ -30,6 +32,14 @@
         <button id="newquote-button">New Quote</button>
       </div>
     </div>
+
+    <footer>
+      <p>
+        A quote generator made using the
+        <a href="https://type.fit/api/quotes">TypeFit Quotes API</a> by
+        <a href="https://github.com/rubanp">Ruban Prakash</a>
+      </p>
+    </footer>
     <!-- Script -->
     <script src="script.js" type="module"></script>
   </body>
